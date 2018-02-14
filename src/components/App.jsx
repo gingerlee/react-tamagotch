@@ -6,11 +6,13 @@ import Header from './Header';
 
 function App(){
   return (
-    <Header />
-    <Switch>
-      <Route exact path='/' component={ StartForm } />
-      <Route component={Error404} />
-    </Switch>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={ StartForm } />
+        <Route component={Error404} />
+      </Switch>
+    </div>
   );
 }
 
