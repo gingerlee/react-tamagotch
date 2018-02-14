@@ -1,21 +1,19 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
+import StartForm from './StartForm';
+import Header from './Header';
 
 function App(){
   return (
+    <Header />
     <Switch>
-      <Route exact path='/' component={/*Default*/} />
+      <Route exact path='/' component={ StartForm } />
       <Route component={Error404} />
     </Switch>
   );
 }
 
-//delete the following component definition before use
-{/*function Default(){
-  return(
-    <h1>Default Component/App/Router Works!</h1>
-  );
-}*/}
+
 
 export default App;
