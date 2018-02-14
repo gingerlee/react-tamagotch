@@ -6,7 +6,6 @@ import EatButton from './EatButton';
 function Control() {
   return(
     <div>
-      Control Works!
       <PlayButton />
       <EatButton />
       <SleepButton />
