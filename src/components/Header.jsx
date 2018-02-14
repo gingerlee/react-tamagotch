@@ -5,7 +5,7 @@ function Header(){
   return(
     <div>
       <h1> Welcome to Tamagotchi!</h1>
-      <Link to="/">Start Game</Link>
+      <Link to="/"></Link>
     </div>
   );
 }
