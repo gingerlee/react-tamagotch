@@ -24,7 +24,7 @@ function Control(props) {
           <PlayButton onPlayWithMe={props.handlePlayWithMe}  />
         </div>
         <div className="button">
-          <EatButton onFeedMe={props.handleFeedMe}/>
+          <EatButton onFeedMe={props.handleFeedMe} />
         </div>
         <div className="button">
           <SleepButton onPutMeToSleep={props.handlePutMeToSleep}/>
