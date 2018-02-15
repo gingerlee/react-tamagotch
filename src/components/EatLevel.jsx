@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function EatLevel(){
+function EatLevel(props){
   return(
     <div>
-      <h3>Eat:</h3>
+      <h5>Eat:{props.eatLevel}</h5>
     </div>
   );
 }
+
+EatLevel.propTypes = {
+  onStartGame: PropTypes.func
+};
 
 export default EatLevel;

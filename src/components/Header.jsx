@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function Header(){
   return(
     <div>
-      <h1> Welcome to Tamagotchi!</h1>
+      <h1>Bulbasaur Tamagotchi San</h1>
       <Link to="/"></Link>
     </div>
   );

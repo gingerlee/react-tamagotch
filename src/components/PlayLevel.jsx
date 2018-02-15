@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function PlayLevel(){
+function PlayLevel(props){
   return(
     <div>
-      <h3>Play:</h3>
+      <h5>Play:{props.playLevel}</h5>
     </div>
   );
 }
+
+PlayLevel.propTypes = {
+  onStartGame: PropTypes.func
+};
 
 export default PlayLevel;

@@ -3,8 +3,9 @@ import Pet from './Pet';
 import PlayLevel from './PlayLevel';
 import EatLevel from './EatLevel';
 import SleepLevel from './SleepLevel';
+import PropTypes from 'prop-types';
 
-function Display() {
+function Display(props) {
   return(
     <div>
       <style jsx>
@@ -13,24 +14,28 @@ function Display() {
             display: flex;
           }
           .level {
-            margin: 10px;
+            margin: 0 30px;
           }
           `}
       </style>
       <div className="level-container">
         <div className="level">
-          <PlayLevel />
+          <PlayLevel onStartGame={this.handleStartGame}/>
         </div>
         <div className="level">
-          <EatLevel />
+          <EatLevel onStartGame={this.handleStartGame}/>
         </div>
         <div className="level">
-          <SleepLevel />
+          <SleepLevel onStartGame={this.handleStartGame}/>
         </div>
       </div>
       <Pet />
     </div>
   );
 }
+
+Display.propTypes = {
+  onStartGame: PropTypes.func
+};
 
 export default Display;

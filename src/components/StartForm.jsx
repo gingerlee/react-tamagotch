@@ -4,6 +4,11 @@ import {Button, Icon} from 'react-materialize';
 function StartForm() {
   return(
     <div>
+      <style jsx>{`
+        form {
+          display: none;
+        }
+        `}</style>
       <form>
         <input
           type='text'

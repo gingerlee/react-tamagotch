@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function SleepLevel(){
+function SleepLevel(props){
   return(
     <div>
-      <h3>Sleep:</h3>
+      <h5>Sleep:{props.sleepLevel}</h5>
     </div>
   );
 }
+
+SleepLevel.propTypes = {
+  onStartGame: PropTypes.func
+};
 
 export default SleepLevel;

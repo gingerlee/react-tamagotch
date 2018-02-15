@@ -9,9 +9,8 @@ function App(){
   return (
     <div>
       <Header />
-      <House />
       <Switch>
-        <Route exact path='/' component={ StartForm } />
+        <Route exact path='/' component={ House } />
         <Route component={Error404} />
       </Switch>
     </div>
