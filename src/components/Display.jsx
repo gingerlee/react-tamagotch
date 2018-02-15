@@ -20,7 +20,8 @@ function Display(props) {
       </style>
       <div className="level-container">
         <div className="level">
-          <PlayLevel playLevelStart={props.character.playLevel}/>
+          <PlayLevel
+            playLevelStart={props.character.playLevel}/>
         </div>
         <div className="level">
           <EatLevel
@@ -28,7 +29,8 @@ function Display(props) {
             />
         </div>
         <div className="level">
-          <SleepLevel sleepLevelStart={props.character.sleepLevel}/>
+          <SleepLevel
+            sleepLevelStart={props.character.sleepLevel}/>
         </div>
       </div>
       <Pet />
@@ -38,7 +40,6 @@ function Display(props) {
 
 Display.propTypes = {
   character: PropTypes.object,
-
 };
 
 export default Display;

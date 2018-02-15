@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function SleepLevel(props){
   return(
     <div>
-      <h5>Sleep:{props.sleepLevelStart}</h5>
+      <h5>Sleep: {props.sleepLevelStart}</h5>
     </div>
   );
 }

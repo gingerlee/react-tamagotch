@@ -10,7 +10,7 @@ function EatLevel(props){
 }
 
 EatLevel.propTypes = {
-  foodLevelStart: PropTypes.number,
+  foodLevelStart: PropTypes.number
 };
 
 export default EatLevel;

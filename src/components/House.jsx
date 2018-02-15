@@ -8,13 +8,16 @@ class House extends React.Component {
     super(props);
     this.state = {
       foodLevel: 10,
-      sleepLevel: 7,
-      playLevel: 9
+      sleepLevel: 10,
+      playLevel: 10
     };
-    this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
+    {/*this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
     this.handlePutMeToSleep = this.handlePutMeToSleep.bind(this);
-    this.handleFeedMe = this.handleFeedMe.bind(this);
-    this.updateHunger = this.updateHunger.bind(this);
+    this.handleFeedMe = this.handleFeedMe.bind(this);*/}
+
+    {/*this.updateHunger = this.updateHunger.bind(this);
+    this.updateSleep = this.updateSleep.bind(this);
+    this.updatePlay = this.updatePlay.bind(this);*/}
   }
 
   handlePlayWithMe() {
@@ -45,11 +48,36 @@ class House extends React.Component {
     this.setState({foodLevel: updateFoodLevel});
   }
 
+  updateSleep() {
+    let updateSleepLevel = this.state.sleepLevel;
+    if (this.state.sleepLevel === 0) {
+      updateSleepLevel;
+    } else {
+      updateSleepLevel--;
+    }
+    this.setState({sleepLevel: updateSleepLevel});
+  }
+
+  updatePlay() {
+    let newPlayLevel = this.state.playLevel;
+    if (this.state.playLevel === 0) {
+      newPlayLevel;
+    } else {
+      newPlayLevel--;
+    }
+    this.setState({playLevel: newPlayLevel});
+  }
+
   componentDidMount() {
-    this.hungerIntervals = setInterval(() =>
+    setInterval(() =>
       this.updateHunger(),
     2000);
-
+    setInterval(() =>
+      this.updateSleep(),
+    5000);
+    setInterval(() =>
+      this.updatePlay(),
+    4000);
   }
 
   render(){
