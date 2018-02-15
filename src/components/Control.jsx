@@ -6,9 +6,29 @@ import EatButton from './EatButton';
 function Control() {
   return(
     <div>
-      <PlayButton />
-      <EatButton />
-      <SleepButton />
+      <style jsx>
+        {`
+          .button-container {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+          }
+          .button {
+            margin: 10px;
+          }
+          `}
+      </style>
+      <div className="button-container">
+        <div className="button">
+          <PlayButton  />
+        </div>
+        <div className="button">
+          <EatButton />
+        </div>
+        <div className="button">
+          <SleepButton />
+        </div>
+      </div>
     </div>
   );
 }

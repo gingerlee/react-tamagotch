@@ -44,6 +44,12 @@ function Pet() {
             width: 100px;
             height: 100px;
           }
+          @keyframes moving {
+            0%   {left: 53%;}
+            25%  {left: 33%;}
+            50%  {left: 13%;}
+            100% {left: 23%;}
+          }
         `}
       </style>
       <div className="game-play">
