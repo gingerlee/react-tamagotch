@@ -1,5 +1,5 @@
 {
-  "name": "react-tamagotchi",
+  "name": "q",
   "version": "1.0.0",
   "description": "Recreate vanilla js game into react game",
   "main": "index.js",
@@ -34,5 +34,13 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.4.0",
     "webpack-dev-server": "^2.5.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CherylFrankenfield/react-tamagotchi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CherylFrankenfield/react-tamagotchi/issues"
+  },
+  "homepage": "https://github.com/CherylFrankenfield/react-tamagotchi#readme"
 }
