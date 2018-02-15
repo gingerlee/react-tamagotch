@@ -7,14 +7,14 @@ class House extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      foodLevel: 4,
+      foodLevel: 10,
       sleepLevel: 7,
       playLevel: 9
     };
     this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
     this.handlePutMeToSleep = this.handlePutMeToSleep.bind(this);
     this.handleFeedMe = this.handleFeedMe.bind(this);
-    this.setHunger = this.setHunger.bind(this);
+    this.updateHunger = this.updateHunger.bind(this);
   }
 
   handlePlayWithMe() {
@@ -35,14 +35,21 @@ class House extends React.Component {
     this.setState({sleepLevel: newSleepLevel});
   }
 
-  setHunger() {
-    setInterval(() => {
-      if(this.state.foodLevel === 0){
-        return this.state.foodLevel;
-      } else {
-        this.state.foodLevel--;
-      }
-    }, 2000);
+  updateHunger() {
+    let updateFoodLevel = this.state.foodLevel;
+    if (this.state.foodLevel === 0){
+      updateFoodLevel;
+    } else {
+      updateFoodLevel--;
+    }
+    this.setState({foodLevel: updateFoodLevel});
+  }
+
+  componentDidMount() {
+    this.hungerIntervals = setInterval(() =>
+      this.updateHunger(),
+    2000);
+
   }
 
   render(){
@@ -53,7 +60,7 @@ class House extends React.Component {
           handleFeedMe={this.handleFeedMe}
           handlePlayWithMe={this.handlePlayWithMe}
           handlePutMeToSleep={this.handlePutMeToSleep}
-          setHunger={this.setHunger}/>
+          />
       </div>
     );
   }

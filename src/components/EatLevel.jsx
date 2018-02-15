@@ -11,7 +11,6 @@ function EatLevel(props){
 
 EatLevel.propTypes = {
   foodLevelStart: PropTypes.number,
-  setHunger: PropTypes.func
 };
 
 export default EatLevel;

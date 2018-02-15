@@ -25,7 +25,7 @@ function Display(props) {
         <div className="level">
           <EatLevel
             foodLevelStart={props.character.foodLevel}
-            setHunger={props.setHunger}/>
+            />
         </div>
         <div className="level">
           <SleepLevel sleepLevelStart={props.character.sleepLevel}/>
@@ -38,7 +38,7 @@ function Display(props) {
 
 Display.propTypes = {
   character: PropTypes.object,
-  setHunger: PropTypes.func
+
 };
 
 export default Display;
