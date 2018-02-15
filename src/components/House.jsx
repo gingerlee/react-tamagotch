@@ -7,7 +7,6 @@ function House() {
     <div>
       <Display />
       <Control />
-      House works!
     </div>
   );
 }

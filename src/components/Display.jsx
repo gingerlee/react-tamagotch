@@ -7,7 +7,6 @@ import SleepLevel from './SleepLevel';
 function Display() {
   return(
     <div>
-      Display works!
       <Pet />
       <PlayLevel />
       <EatLevel />
