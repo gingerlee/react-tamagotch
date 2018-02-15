@@ -7,26 +7,40 @@ class House extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      foodLevel: 10,
-      sleepLevel: 10,
-      playLevel: 10
+      foodLevel: 4,
+      sleepLevel: 7,
+      playLevel: 9
     };
-    this.handleStartGame = this.handleStartGame.bind(this);
+    this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
+    this.handlePutMeToSleep = this.handlePutMeToSleep.bind(this);
+    this.handleFeedMe = this.handleFeedMe.bind(this);
   }
 
-  handleStartGame(){
-    this.setState({
-      foodLevel: 10,
-      sleepLevel: 10,
-      playLevel: 10
-    });
+  handlePlayWithMe() {
+    let newPlayLevel = this.state.playLevel;
+      newPlayLevel = 10;
+    this.setState({playLevel: newPlayLevel});
+  }
+
+  handleFeedMe() {
+    let newFoodLevel = this.state.foodLevel;
+      newFoodLevel = 10;
+    this.setState({foodLevel: newFoodLevel});
+  }
+
+  handlePutMeToSleep(){
+    let newSleepLevel = this.state.sleepLevel;
+      newSleepLevel = 10;
+    this.setState({sleepLevel: newSleepLevel});
   }
 
   render(){
     return(
       <div>
-        <Display onStartGame={this.handleStartGame}/>
-        <Control />
+        <Display character={this.state}/>
+        <Control handleFeedMe={this.handleFeedMe}
+          handlePlayWithMe={this.handlePlayWithMe}
+          handlePutMeToSleep={this.handlePutMeToSleep}/>
       </div>
     );
   }

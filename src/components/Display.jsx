@@ -20,13 +20,13 @@ function Display(props) {
       </style>
       <div className="level-container">
         <div className="level">
-          <PlayLevel onStartGame={this.handleStartGame}/>
+          <PlayLevel playLevelStart={props.character.playLevel}/>
         </div>
         <div className="level">
-          <EatLevel onStartGame={this.handleStartGame}/>
+          <EatLevel foodLevelStart={props.character.foodLevel}/>
         </div>
         <div className="level">
-          <SleepLevel onStartGame={this.handleStartGame}/>
+          <SleepLevel sleepLevelStart={props.character.sleepLevel}/>
         </div>
       </div>
       <Pet />
@@ -35,7 +35,7 @@ function Display(props) {
 }
 
 Display.propTypes = {
-  onStartGame: PropTypes.func
+  character: PropTypes.object
 };
 
 export default Display;

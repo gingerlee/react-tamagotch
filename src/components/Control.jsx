@@ -2,8 +2,9 @@ import React from 'react';
 import PlayButton from './PlayButton';
 import SleepButton from './SleepButton';
 import EatButton from './EatButton';
+import PropTypes from 'prop-types';
 
-function Control() {
+function Control(props) {
   return(
     <div>
       <style jsx>
@@ -20,17 +21,23 @@ function Control() {
       </style>
       <div className="button-container">
         <div className="button">
-          <PlayButton  />
+          <PlayButton onPlayWithMe={props.handlePlayWithMe}  />
         </div>
         <div className="button">
-          <EatButton />
+          <EatButton onFeedMe={props.handleFeedMe}/>
         </div>
         <div className="button">
-          <SleepButton />
+          <SleepButton onPutMeToSleep={props.handlePutMeToSleep}/>
         </div>
       </div>
     </div>
   );
 }
+
+Control.propTypes = {
+  handlePutMeToSleep: PropTypes.func,
+  handleFeedMe: PropTypes.func,
+  handlePlayWithMe: PropTypes.func
+};
 
 export default Control;

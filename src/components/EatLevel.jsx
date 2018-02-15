@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 function EatLevel(props){
   return(
     <div>
-      <h5>Eat:{props.eatLevel}</h5>
+      <h5>Eat:{props.foodLevelStart}</h5>
     </div>
   );
 }
 
 EatLevel.propTypes = {
-  onStartGame: PropTypes.func
+  foodLevelStart: PropTypes.number
 };
 
 export default EatLevel;
