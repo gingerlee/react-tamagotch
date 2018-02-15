@@ -26,7 +26,7 @@ function Display(props) {
         <div className="level">
           <EatLevel
             foodLevelStart={props.character.foodLevel}
-            />
+          />
         </div>
         <div className="level">
           <SleepLevel

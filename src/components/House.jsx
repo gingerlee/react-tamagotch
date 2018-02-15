@@ -11,13 +11,9 @@ class House extends React.Component {
       sleepLevel: 10,
       playLevel: 10
     };
-    {/*this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
+    this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
     this.handlePutMeToSleep = this.handlePutMeToSleep.bind(this);
-    this.handleFeedMe = this.handleFeedMe.bind(this);*/}
-
-    {/*this.updateHunger = this.updateHunger.bind(this);
-    this.updateSleep = this.updateSleep.bind(this);
-    this.updatePlay = this.updatePlay.bind(this);*/}
+    this.handleFeedMe = this.handleFeedMe.bind(this);
   }
 
   handlePlayWithMe() {
@@ -46,6 +42,7 @@ class House extends React.Component {
       updateFoodLevel--;
     }
     this.setState({foodLevel: updateFoodLevel});
+    this.areYouDead();
   }
 
   updateSleep() {
@@ -56,6 +53,7 @@ class House extends React.Component {
       updateSleepLevel--;
     }
     this.setState({sleepLevel: updateSleepLevel});
+    this.areYouDead();
   }
 
   updatePlay() {
@@ -66,18 +64,28 @@ class House extends React.Component {
       newPlayLevel--;
     }
     this.setState({playLevel: newPlayLevel});
+    this.areYouDead();
   }
 
   componentDidMount() {
-    setInterval(() =>
+    this.hungerIntervals = setInterval(() =>
       this.updateHunger(),
     2000);
-    setInterval(() =>
+    this.sleepIntervals = setInterval(() =>
       this.updateSleep(),
     5000);
-    setInterval(() =>
+    this.playIntervals = setInterval(() =>
       this.updatePlay(),
     4000);
+  }
+
+  areYouDead() {
+    if ((this.state.foodLevel === 0) && (this.state.sleepLevel === 0) && (this.state.playLevel === 0)) {
+      alert('Shame, you just killed Bulbasaur!');
+      clearInterval(this.hungerIntervals);
+      clearInterval(this.sleepIntervals);
+      clearInterval(this.playIntervals);
+    }
   }
 
   render(){
@@ -88,7 +96,7 @@ class House extends React.Component {
           handleFeedMe={this.handleFeedMe}
           handlePlayWithMe={this.handlePlayWithMe}
           handlePutMeToSleep={this.handlePutMeToSleep}
-          />
+        />
       </div>
     );
   }
