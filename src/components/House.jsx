@@ -9,7 +9,8 @@ class House extends React.Component {
     this.state = {
       foodLevel: 10,
       sleepLevel: 10,
-      playLevel: 10
+      playLevel: 10,
+      petIsAlive: true
     };
     this.handlePlayWithMe = this.handlePlayWithMe.bind(this);
     this.handlePutMeToSleep = this.handlePutMeToSleep.bind(this);
@@ -70,21 +71,21 @@ class House extends React.Component {
   componentDidMount() {
     this.hungerIntervals = setInterval(() =>
       this.updateHunger(),
-    2000);
+    1000);
     this.sleepIntervals = setInterval(() =>
       this.updateSleep(),
-    5000);
+    1000);
     this.playIntervals = setInterval(() =>
       this.updatePlay(),
-    4000);
+    1000);
   }
 
   areYouDead() {
     if ((this.state.foodLevel === 0) && (this.state.sleepLevel === 0) && (this.state.playLevel === 0)) {
-      alert('Shame, you just killed Bulbasaur!');
       clearInterval(this.hungerIntervals);
       clearInterval(this.sleepIntervals);
       clearInterval(this.playIntervals);
+      this.setState({petIsAlive: false});
     }
   }
 
@@ -92,6 +93,7 @@ class House extends React.Component {
     return(
       <div>
         <Display character={this.state}/>
+
         <Control
           handleFeedMe={this.handleFeedMe}
           handlePlayWithMe={this.handlePlayWithMe}

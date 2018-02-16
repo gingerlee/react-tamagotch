@@ -33,13 +33,14 @@ function Display(props) {
             sleepLevelStart={props.character.sleepLevel}/>
         </div>
       </div>
-      <Pet />
+      <Pet petIsAlive={props.character.petIsAlive} />
     </div>
   );
 }
 
 Display.propTypes = {
   character: PropTypes.object,
+
 };
 
 export default Display;

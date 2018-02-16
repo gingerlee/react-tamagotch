@@ -2,8 +2,9 @@ import React from 'react';
 import char from '../assets/images/char.png';
 import ipad from '../assets/images/ipad.png';
 import gameBackground from '../assets/images/gameBackground.gif';
+import PropTypes from 'prop-types';
 
-function Pet() {
+function Pet(props) {
   return(
     <div>
       <style jsx>
@@ -53,18 +54,24 @@ function Pet() {
         `}
       </style>
       <div className="game-play">
-        <div className="pet">
-          <img className="pet-img" src={char}/>
-        </div>
+        {props.petIsAlive === true &&
+          <div className="pet">
+            <img className="pet-img" src={char}/>
+          </div>
+        }
         <div className="pet-area">
           <img className="pet-area-img" src={gameBackground}/>
         </div>
-        <div >
+        <div>
           <img className="ipad-img" src={ipad}/>
         </div>
       </div>
     </div>
   );
 }
+
+Pet.propTypes = {
+  petIsAlive: PropTypes.bool
+};
 
 export default Pet;
